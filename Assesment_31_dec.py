@@ -24,8 +24,8 @@ from sklearn.preprocessing import LabelEncoder
 
 def telegram_send_photo(caption, x):
     current_date = datetime.now().strftime('%d-%m-%Y')
-    bot_token = '6627132548:AAFjZNcqGUfqSFP2No07LQO_YasAKTcNP7M'
-    chat_id = '-4199876403'  # Replace with the chat ID where you want to send the image
+    bot_token = ''
+    chat_id = ''  # Replace with the chat ID where you want to send the image
 
     #caption = f'Total Donation for every Year for all type of {K} {current_date}.png'
 
@@ -48,8 +48,8 @@ def send_document(y):
     current_date = datetime.now().strftime('%d-%m-%Y')
 
     #plt.show()
-    bot_token = '6627132548:AAFjZNcqGUfqSFP2No07LQO_YasAKTcNP7M'
-    chat_id = '-4199876403'  # Replace with the chat ID where you want to send the document
+    bot_token = ''
+    chat_id = ''  # Replace with the chat ID where you want to send the document
 
     caption_classification_report = f'Classification report {current_date}.txt'
 
