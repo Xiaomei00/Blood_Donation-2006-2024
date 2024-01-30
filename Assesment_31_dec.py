@@ -21,11 +21,11 @@ from bokeh.models.formatters import PrintfTickFormatter
 from sklearn.preprocessing import LabelEncoder
 
 
-
+#Send photo to telegram
 def telegram_send_photo(caption, x):
     current_date = datetime.now().strftime('%d-%m-%Y')
     bot_token = ''
-    chat_id = ''  # Replace with the chat ID where you want to send the image
+    chat_id = ''  
 
     #caption = f'Total Donation for every Year for all type of {K} {current_date}.png'
 
@@ -43,13 +43,13 @@ def telegram_send_photo(caption, x):
     else:
         print(f'Error {response.status_code}: {response.text}')
 
-    
+ #Send document to Telegram   
 def send_document(y):   
     current_date = datetime.now().strftime('%d-%m-%Y')
 
     #plt.show()
     bot_token = ''
-    chat_id = ''  # Replace with the chat ID where you want to send the document
+    chat_id = ''  
 
     caption_classification_report = f'Classification report {current_date}.txt'
 
@@ -68,7 +68,7 @@ def send_document(y):
         print(f'Error {response.status_code}: {response.text}')
 
 
-
+# Data science machine learning 
 def data_machine_learning_report():
     
     def read_parquet():
@@ -186,28 +186,8 @@ def data_machine_learning_report():
     
 data_machine_learning_report()
 
-def telegram_send_photo(caption, x):
-    current_date = datetime.now().strftime('%d-%m-%Y')
-    bot_token = '6627132548:AAFjZNcqGUfqSFP2No07LQO_YasAKTcNP7M'
-    chat_id = '-4199876403'  # Replace with the chat ID where you want to send the image
 
-    #caption = f'Total Donation for every Year for all type of {K} {current_date}.png'
-
-    # URL for sending a photo to the bot
-    url = f'https://api.telegram.org/bot{bot_token}/sendPhoto'
-
-    files = {'photo':  ('Image_blood_percent.png', x)}
-    data = {'chat_id': chat_id, 'caption': caption }
-
-    response = requests.post(url, files=files, data=data)
-
-    # Check the response
-    if response.status_code == 200:
-        print('Image sent successfully!')
-    else:
-        print(f'Error {response.status_code}: {response.text}')
-
-
+# Trend for donor facility for total donation on blood type
 def donor_facility():
 
     def read_csv_don_facility():
@@ -358,7 +338,7 @@ def donor_facility():
 
 donor_facility()
 
-
+# Total donation for range of ages horizon bar plot
 def newdonor_facility():
 
     def read_csv_new_don_facility():
@@ -449,8 +429,6 @@ def newdonor_facility():
     plt.xticks([])
     plt.xlabel('')
 
-    
-
     plt.title('Total People donor for evey age from 2006 - 2024 current in thousand', size = 20)
 
     
@@ -483,6 +461,7 @@ def newdonor_facility():
 
 newdonor_facility()
 
+# Trend for donation blood with type of social
 def donor_facility_social():
 
     def read_csv_don_facility():
